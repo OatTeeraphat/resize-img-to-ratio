@@ -42,12 +42,12 @@ def resize_canvas(old_image_dir, new_image_dir, type='.png', padding=0,
                 if type == '.png' :
                     newImage = Image.new('RGBA', (canvas_width, canvas_height), (255, 255, 255, 0))
                     newImage.paste(im, (x1, y1, x1 + re_width, y1 + re_height))
-                    newImage.save(new_image_path + str(type), 'PNG', quality=90, optimize=False)
+                    newImage.save(new_image_path + str(type), 'PNG', quality=85, optimize=False)
 
                 elif type == '.jpg' :
                     newImage = Image.new('RGB', (canvas_width, canvas_height), (255, 255, 255))
                     newImage.paste(im, (x1, y1, x1 + re_width, y1 + re_height), mask=im.split()[3])
-                    newImage.save(new_image_path + str(type), 'JPEG', quality=90, optimize=False)
+                    newImage.save(new_image_path + str(type), 'JPEG', quality=85, optimize=False)
 
                 else :
                     print('error : %s' %'not found extention of file (.jpg|.png)')
